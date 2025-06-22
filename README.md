@@ -1,5 +1,5 @@
 rm(list = ls())
-setwd("D:\\GG市\\单细胞\\GSE149614\\sc0306")
+setwd("D:\\")
 
 library(Seurat)
 library(tidyverse)
@@ -11,7 +11,7 @@ library(devtools)
 library(ggplot2)
 
 #读取----------------------------------------------------------------------------------------
-scRNAlist <- fread('GSE149614_HCC.scRNAseq.S71915-NT.count.txt', data.table = FALSE)
+scRNAlist <- fread('GSE.txt', data.table = FALSE)
 rownames(scRNAlist) <- scRNAlist[,1]
 scRNAlist <- scRNAlist[,-1]
 scRNAlist <- CreateSeuratObject(counts = scRNAlist)
